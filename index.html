@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>DeskTon — Organize suas vendas no WhatsApp</title>
+
+<link rel="icon" href="img/escudo.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="DeskTon é um painel offline-first para organizar scripts, clientes e funil de vendas no WhatsApp." />
 
@@ -14,8 +17,9 @@
 :root {
   --green: #198754;
   --green-dark: #0f5132;
-  --bg-light: #f6f8f7;
+  --bg-light: #f4f7f6;
   --bg-white: #ffffff;
+  --bg-gradient: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
   --text-dark: #1f2933;
   --text-muted: #6b7280;
   --border-light: #e5e7eb;
@@ -32,47 +36,33 @@ body {
   background: var(--bg-light);
 }
 
-/* ===== CONTAINER REAL ===== */
+/* ===== CONTAINER ===== */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ===== HEADER (AJUSTADO) ===== */
+/* ===== HEADER ===== */
 header {
   background: var(--bg-white);
   border-bottom: 1px solid var(--border-light);
 }
 
 .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 72px;
-}
-
-.logo-area {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
-.logo-area img {
-  width: 36px;
+.header-inner img {
   height: 36px;
-}
-
-.logo-area span {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--green-dark);
 }
 
 /* ===== BOTÕES ===== */
 .btn {
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -97,8 +87,8 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-  background: #fff;
-  padding: 80px 0;
+  background: var(--bg-gradient);
+  padding: 90px 0;
 }
 
 .hero-grid {
@@ -126,7 +116,7 @@ header {
   flex-wrap: wrap;
 }
 
-/* ===== BLOCOS VISUAIS ===== */
+/* ===== SEÇÕES ===== */
 .section {
   padding: 80px 0;
 }
@@ -142,18 +132,19 @@ header {
 .section h2 {
   font-size: 32px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
-/* ===== CARDS ===== */
+/* ===== GRID / CARDS ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 32px;
 }
 
 .card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 32px;
   border: 1px solid var(--border-light);
   transition: transform .2s ease, box-shadow .2s ease;
@@ -169,11 +160,7 @@ header {
   margin-bottom: 10px;
 }
 
-/* ===== FREE vs PRO ===== */
-.plan-card {
-  padding: 40px;
-}
-
+/* ===== PLANOS ===== */
 .plan-card ul {
   padding-left: 18px;
   margin: 20px 0;
@@ -183,12 +170,35 @@ header {
   margin-bottom: 10px;
 }
 
+/* ===== FAQ ===== */
+.faq {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 26px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 16px;
+}
+
+.faq-item h4 {
+  margin: 0 0 8px;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
 /* ===== CTA FINAL ===== */
 .cta {
-  background: var(--green);
+  background: linear-gradient(180deg, #198754 0%, #0f5132 100%);
   color: #fff;
   text-align: center;
-  padding: 80px 0;
+  padding: 90px 0;
 }
 
 .cta h2 {
@@ -229,10 +239,7 @@ footer a {
 <!-- HEADER -->
 <header>
   <div class="container header-inner">
-    <div class="logo-area">
-      <img src="img/logo.png" alt="DeskTon">
-      <span>DeskTon</span>
-    </div>
+    <img src="img/logo.png" alt="DeskTon">
   </div>
 </header>
 
@@ -269,31 +276,16 @@ footer a {
   </div>
 </section>
 
-<!-- BENEFÍCIOS -->
+<!-- PRA QUEM É -->
 <section class="section light">
   <div class="container">
-    <h2>Por que usar o DeskTon</h2>
+    <h2>Pra quem é o DeskTon</h2>
 
     <div class="grid">
-      <div class="card">
-        <h3>Velocidade</h3>
-        <p>Copie respostas prontas e responda em segundos.</p>
-      </div>
-
-      <div class="card">
-        <h3>Organização</h3>
-        <p>Saiba exatamente em que etapa cada cliente está.</p>
-      </div>
-
-      <div class="card">
-        <h3>Clareza</h3>
-        <p>Interface limpa, sem excesso de informação.</p>
-      </div>
-
-      <div class="card">
-        <h3>Offline</h3>
-        <p>Funciona no celular ou computador, mesmo sem internet.</p>
-      </div>
+      <div class="card">Vendedores pelo WhatsApp</div>
+      <div class="card">Afiliados e representantes</div>
+      <div class="card">Inside sales</div>
+      <div class="card">Quem responde mensagens todos os dias</div>
     </div>
   </div>
 </section>
@@ -312,7 +304,6 @@ footer a {
           <li>2 objeções</li>
           <li>2 follow-ups</li>
           <li>5 clientes</li>
-          <li>Uso offline</li>
         </ul>
 
         <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
@@ -323,11 +314,7 @@ footer a {
       <div class="card plan-card">
         <h3>⭐ DeskTon Pro</h3>
         <ul>
-          <li>Pastas ilimitadas</li>
-          <li>Blocos ilimitados</li>
-          <li>Objeções ilimitadas</li>
-          <li>Follow-ups ilimitados</li>
-          <li>Clientes ilimitados</li>
+          <li>Recursos ilimitados</li>
           <li>Estatísticas liberadas</li>
           <li>Importação de dados</li>
         </ul>
@@ -339,6 +326,35 @@ footer a {
         <p style="font-size:13px; color:#666; margin-top:12px;">
           Link de ativação enviado por e-mail após a compra.
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section light">
+  <div class="container">
+    <h2>Dúvidas frequentes</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Funciona offline?</h4>
+        <p>Sim. Após carregar, você pode usar o DeskTon sem internet.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Funciona no celular?</h4>
+        <p>Sim. Android, iOS, Windows e Mac.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Preciso criar conta?</h4>
+        <p>Não. O DeskTon não usa login ou senha.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>É mensalidade?</h4>
+        <p>Não. O DeskTon Pro é pagamento único.</p>
       </div>
     </div>
   </div>

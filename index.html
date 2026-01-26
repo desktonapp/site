@@ -1,37 +1,23 @@
-<!-- NOVO SITE DESKTON v2.0 — DESIGN PROFISSIONAL, CALMO E PREMIUM -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>DeskTon — Sistema de execução para vendedores</title>
+  <title>DeskTon — Organize suas vendas no WhatsApp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DeskTon é um sistema offline-first que organiza scripts, clientes e funil de vendas para quem vende pelo WhatsApp." />
-
-  <link rel="icon" href="img/escudo.png" />
+  <meta name="description" content="DeskTon é um painel offline para organizar scripts, objeções, follow-ups, clientes e funil de vendas no WhatsApp." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --green: #198754;
-      --green-dark: #0f5132;
-      --gray-bg: #f6f8f7;
-      --text: #1f2933;
-      --muted: #6b7280;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
-      color: var(--text);
-      background: var(--gray-bg);
+      font-family: Inter, system-ui, sans-serif;
+      background: #f6f8f7;
+      color: #222;
+      line-height: 1.6;
     }
-
-    a { text-decoration: none; color: inherit; }
 
     .container {
       max-width: 1100px;
@@ -41,163 +27,113 @@
 
     header {
       background: white;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
     }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
+    header strong {
+      font-size: 18px;
     }
 
-    nav a {
-      margin-left: 28px;
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 500;
+    section {
+      padding: 88px 0;
     }
 
-    nav a:hover {
-      color: var(--green);
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
     }
 
-    .hero {
-      background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
-      padding: 96px 0 72px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      line-height: 1.15;
+    h2 {
+      font-size: 30px;
       margin-bottom: 20px;
       letter-spacing: -0.02em;
     }
 
-    .hero p {
-      max-width: 520px;
-      color: #374151;
-      font-size: 16px;
-      line-height: 1.6;
+    h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
     }
 
-    .btn-primary {
-      display: inline-block;
-      margin-top: 28px;
-      background: var(--green);
-      color: white;
-      padding: 14px 30px;
-      border-radius: 12px;
-      font-size: 16px;
+    p {
+      max-width: 720px;
+      color: #444;
+    }
+
+    ul {
+      padding-left: 18px;
+      max-width: 720px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #e9f5ef 0%, #ffffff 100%);
+    }
+
+    .actions {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 10px;
+      text-decoration: none;
       font-weight: 600;
-      box-shadow: 0 10px 24px rgba(25,135,84,0.35);
+      font-size: 15px;
+      display: inline-block;
     }
 
-    .btn-primary:hover {
-      background: #157347;
+    .btn.primary {
+      background: #198754;
+      color: white;
     }
 
-    .platforms {
-      margin-top: 18px;
-      font-size: 14px;
-      color: var(--muted);
+    .btn.secondary {
+      border: 1px solid #198754;
+      color: #198754;
+      background: transparent;
     }
 
-    .hero video {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-align: center;
-      letter-spacing: -0.02em;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .card {
+    .box {
       background: white;
       border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-      border: 1px solid #eef0ef;
+      padding: 36px;
+      border: 1px solid #eee;
+      margin-top: 32px;
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .steps {
+    .split {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 32px;
-    }
-
-    .step span {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--green);
-    }
-
-    .cta {
-      background: var(--green-dark);
-      color: white;
-      padding: 96px 0;
-      text-align: center;
-    }
-
-    .cta h2 {
-      color: white;
-      margin-bottom: 28px;
+      margin-top: 32px;
     }
 
     footer {
-      background: #0b3d28;
-      color: #d1fae5;
-      padding: 32px 0;
+      background: #0f5132;
+      color: white;
+      padding: 36px 0;
       font-size: 14px;
     }
 
-    footer a { color: #a7f3d0; }
+    footer a {
+      color: #c7f5dc;
+      text-decoration: none;
+      margin-right: 16px;
+    }
 
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-4, .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
+    .note {
+      font-size: 14px;
+      color: #666;
+      margin-top: 12px;
     }
   </style>
 </head>
@@ -205,87 +141,244 @@
 <body>
 
 <header>
-  <div class="container header-content">
-    <img src="img/logo.png" alt="DeskTon" height="36" />
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Produto</a>
-      <a href="#">FAQ</a>
-    </nav>
+  <div class="container">
+    <strong>DeskTon</strong>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
+  <div class="container">
+    <h1>O painel que organiza suas vendas no WhatsApp.</h1>
 
-    <div>
-      <h1>Execução organizada para quem vende todos os dias</h1>
-      <p>
-        DeskTon é um sistema offline-first que centraliza scripts, clientes,
-        objeções e funil de vendas — sem improviso e sem depender de planilhas
-        ou bloco de notas.
-      </p>
+    <p>
+      Scripts, objeções, follow-ups, clientes e funil em um só lugar.
+      Sem bloco de notas. Sem bagunça. Sem depender de internet.
+    </p>
 
-      <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn-primary">
-        Acessar DeskTon Pro
+    <div class="actions">
+      <a
+        href="https://desktonapp.github.io/deskton/"
+        class="btn secondary"
+        target="_blank"
+      >
+        Acessar DeskTon Free
       </a>
 
-      <div class="platforms">
-        Android • iOS • Windows • Funciona offline • Pagamento único
+      <a
+        href="https://chk.eduzz.com/E0D68VBD91?country=BRA"
+        class="btn primary"
+        target="_blank"
+      >
+        Conhecer o DeskTon Pro
+      </a>
+    </div>
+
+    <p class="note">
+      Funciona no celular e no computador • Offline-first • Pagamento único
+    </p>
+  </div>
+</section>
+
+<!-- POSICIONAMENTO -->
+<section>
+  <div class="container">
+    <h2>Posicionamento</h2>
+
+    <p><strong>DeskTon não é um curso, nem uma promessa milagrosa.</strong></p>
+
+    <p>
+      É um <strong>painel de execução</strong> para quem vende pelo WhatsApp e precisa:
+    </p>
+
+    <ul>
+      <li>parar de improvisar</li>
+      <li>ganhar velocidade</li>
+      <li>manter controle do funil</li>
+    </ul>
+
+    <p>
+      Funciona <strong>offline</strong>, sem login, sem mensalidade.
+    </p>
+  </div>
+</section>
+
+<!-- O QUE É -->
+<section>
+  <div class="container">
+    <h2>O que é o DeskTon</h2>
+
+    <p>
+      O DeskTon é um <strong>web app</strong> que funciona direto no navegador.
+      Você organiza toda sua operação de vendas em painéis simples:
+    </p>
+
+    <ul>
+      <li>Scripts por etapas</li>
+      <li>Respostas para objeções</li>
+      <li>Follow-ups prontos</li>
+      <li>Lista de clientes com status</li>
+      <li>Funil e estatísticas</li>
+    </ul>
+
+    <p>
+      Tudo salvo no seu dispositivo.<br>
+      Sem conta. Sem login. Sem dependência externa.
+    </p>
+  </div>
+</section>
+
+<!-- FREE vs PRO -->
+<section>
+  <div class="container">
+    <h2>DeskTon Free vs DeskTon Pro</h2>
+
+    <div class="split">
+      <!-- FREE -->
+      <div class="box">
+        <h3>🆓 DeskTon Free</h3>
+        <p>Ideal para conhecer o fluxo e testar o método.</p>
+
+        <ul>
+          <li>✔️ 1 pasta de scripts</li>
+          <li>✔️ Até 6 blocos por pasta</li>
+          <li>✔️ Até 2 objeções</li>
+          <li>✔️ Até 2 follow-ups</li>
+          <li>✔️ Até 5 clientes</li>
+          <li>✔️ Uso offline</li>
+        </ul>
+
+        <p>Limitações claras, sem pegadinhas.</p>
+
+        <a
+          href="https://desktonapp.github.io/deskton/"
+          class="btn secondary"
+          target="_blank"
+        >
+          Acessar DeskTon Free
+        </a>
+      </div>
+
+      <!-- PRO -->
+      <div class="box">
+        <h3>⭐ DeskTon Pro (Pagamento Único)</h3>
+        <p>Para quem quer usar o DeskTon de forma completa e contínua.</p>
+
+        <ul>
+          <li>🚀 Pastas ilimitadas</li>
+          <li>🚀 Blocos ilimitados</li>
+          <li>🚀 Objeções ilimitadas</li>
+          <li>🚀 Follow-ups ilimitados</li>
+          <li>🚀 Clientes ilimitados</li>
+          <li>📊 Estatísticas e funil liberados</li>
+          <li>📥 Importação de pastas e backups</li>
+        </ul>
+
+        <a
+          href="https://chk.eduzz.com/E0D68VBD91?country=BRA"
+          class="btn primary"
+          target="_blank"
+        >
+          Adquirir DeskTon Pro
+        </a>
+
+        <p class="note">
+          Após a compra, você recebe por e-mail um <strong>link de ativação</strong>.<br>
+          Basta abrir o link uma vez para liberar todos os recursos.
+        </p>
       </div>
     </div>
-
-    <div>
-      <video src="img/metads.mp4" autoplay muted loop playsinline></video>
-    </div>
-
   </div>
 </section>
 
+<!-- ATIVAÇÃO -->
 <section>
   <div class="container">
-    <h2>Por que o DeskTon existe</h2>
+    <h2>Como funciona a ativação do Pro</h2>
 
-    <div class="grid-4">
-      <div class="card"><h3>Centralização</h3><p>Tudo em um único painel, sem depender de apps paralelos.</p></div>
-      <div class="card"><h3>Velocidade</h3><p>Respostas prontas com 1 clique durante a conversa.</p></div>
-      <div class="card"><h3>Clareza</h3><p>Visualize exatamente quem está em cada etapa do funil.</p></div>
-      <div class="card"><h3>Controle</h3><p>Menos esquecimento, menos improviso, mais consistência.</p></div>
-    </div>
+    <ol>
+      <li>Você finaliza a compra</li>
+      <li>Recebe um e-mail com seu link exclusivo</li>
+      <li>Abre o link no dispositivo que usa o DeskTon</li>
+      <li>Pronto. O Pro é ativado localmente</li>
+    </ol>
+
+    <p>
+      Sem login.<br>
+      Sem senha.<br>
+      Sem chave visível.
+    </p>
   </div>
 </section>
 
+<!-- PARA QUEM -->
 <section>
   <div class="container">
-    <h2>Como funciona</h2>
+    <h2>Para quem é o DeskTon</h2>
 
-    <div class="steps">
-      <div class="card step"><span>1</span><h3>Organize</h3><p>Crie scripts e objeções por etapas da venda.</p></div>
-      <div class="card step"><span>2</span><h3>Execute</h3><p>Copie e responda sem perder tempo.</p></div>
-      <div class="card step"><span>3</span><h3>Acompanhe</h3><p>Visualize funil, status e conversão.</p></div>
-    </div>
+    <ul>
+      <li>Vendedores</li>
+      <li>Representantes comerciais</li>
+      <li>Afiliados</li>
+      <li>Inside sales</li>
+      <li>Quem vende pelo WhatsApp todos os dias</li>
+    </ul>
+
+    <p>
+      Se você responde mensagens repetidas, perde clientes por desorganização
+      ou não sabe em que etapa cada conversa está — o DeskTon resolve isso.
+    </p>
   </div>
 </section>
 
-<section class="cta">
+<!-- FAQ -->
+<section>
   <div class="container">
-    <h2>Menos improviso. Mais controle.</h2>
-    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn-primary">
-      Desbloquear DeskTon Pro
-    </a>
+    <h2>FAQ</h2>
+
+    <p><strong>Funciona offline?</strong><br>Sim. Após carregar, você pode usar sem internet.</p>
+    <p><strong>Funciona no celular?</strong><br>Sim. Android, iOS, Windows, Mac.</p>
+    <p><strong>Preciso criar conta?</strong><br>Não. O DeskTon não usa login.</p>
+    <p><strong>É mensalidade?</strong><br>Não. Pagamento único.</p>
+    <p><strong>Se trocar de celular?</strong><br>Você pode exportar seus dados e importar no novo dispositivo.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="hero">
+  <div class="container">
+    <h2>Escolha como quer usar o DeskTon</h2>
+
+    <div class="actions">
+      <a
+        href="https://desktonapp.github.io/deskton/"
+        class="btn secondary"
+        target="_blank"
+      >
+        Começar pelo Free
+      </a>
+
+      <a
+        href="https://chk.eduzz.com/E0D68VBD91?country=BRA"
+        class="btn primary"
+        target="_blank"
+      >
+        Desbloquear o Pro
+      </a>
+    </div>
+
+    <p class="note">
+      DeskTon é ferramenta de execução.<br>
+      Não promete milagres — entrega organização.
+    </p>
   </div>
 </section>
 
 <footer>
-  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-    <div>
-      <strong>DeskTon</strong><br>
-      © 2026 — Todos os direitos reservados
-    </div>
-    <div>
-      <a href="politica-de-privacidade.html">Política de Privacidade</a><br>
-      <a href="mailto:deskton.suporte@gmail.com">Suporte</a>
-    </div>
+  <div class="container">
+    DeskTon © 2026 — Produto digital independente<br><br>
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Suporte</a>
   </div>
 </footer>
 

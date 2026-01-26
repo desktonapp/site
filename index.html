@@ -1,108 +1,202 @@
+<!-- NOVO SITE DESKTON v2.0 — DESIGN PROFISSIONAL, CALMO E PREMIUM -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>DeskTon — O painel que organiza suas vendas no WhatsApp</title>
+  <title>DeskTon — Sistema de execução para vendedores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pare de improvisar no WhatsApp. Organize scripts, objeções, follow-ups, clientes e funil de vendas em um único painel offline." />
+  <meta name="description" content="DeskTon é um sistema offline-first que organiza scripts, clientes e funil de vendas para quem vende pelo WhatsApp." />
 
   <link rel="icon" href="img/escudo.png" />
-  <link rel="stylesheet" href="css/style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- 🔥 AJUSTES ESTÉTICOS -->
   <style>
-    body {
-      background: #f6f8f7;
+    :root {
+      --green: #198754;
+      --green-dark: #0f5132;
+      --gray-bg: #f6f8f7;
+      --text: #1f2933;
+      --muted: #6b7280;
     }
 
-    h1, h2, h3 {
-      letter-spacing: -0.02em;
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--gray-bg);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    nav a {
+      margin-left: 28px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--green);
     }
 
     .hero {
-      background: linear-gradient(180deg, #e9f5ef 0%, #ffffff 100%);
-      padding: 96px 0;
+      background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
+      padding: 96px 0 72px;
     }
 
-    .hero-text h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin-bottom: 18px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
     }
 
-    .hero-text p {
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
       max-width: 520px;
-      color: #444;
+      color: #374151;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .btn-primary {
       display: inline-block;
-      margin-top: 22px;
-      padding: 14px 28px;
+      margin-top: 28px;
+      background: var(--green);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 12px;
       font-size: 16px;
-      border-radius: 10px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(25,135,84,0.35);
     }
 
-    .cards {
-      gap: 28px;
+    .btn-primary:hover {
+      background: #157347;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 14px 34px rgba(0,0,0,0.08);
-      border: 1px solid #eef0ef;
-      transition: transform .2s ease, box-shadow .2s ease;
+    .platforms {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+    .hero video {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
     }
 
-    .card span {
-      font-size: 26px;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    section.features,
-    section.usage {
+    section {
       padding: 80px 0;
     }
 
-    section.features h3,
-    section.usage h3 {
-      margin-bottom: 42px;
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: -0.02em;
     }
 
-    .usage-list div {
-      background: #fff;
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin-bottom: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border: 1px solid #eef0ef;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .step span {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .cta {
+      background: var(--green-dark);
+      color: white;
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 28px;
     }
 
     footer {
-      background: #0f5132;
-      color: #fff;
+      background: #0b3d28;
+      color: #d1fae5;
       padding: 32px 0;
+      font-size: 14px;
     }
 
-    footer a {
-      color: #c7f5dc;
-    }
+    footer a { color: #a7f3d0; }
 
-    @media (max-width: 768px) {
-      .hero-text h1 {
-        font-size: 32px;
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4, .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 34px;
       }
     }
   </style>
@@ -110,125 +204,87 @@
 
 <body>
 
-<header class="header">
+<header>
   <div class="container header-content">
-    <img src="img/logo.png" alt="DeskTon" class="logo" />
+    <img src="img/logo.png" alt="DeskTon" height="36" />
     <nav>
-      <a href="#inicio">Início</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#faq">FAQ</a>
+      <a href="#">Início</a>
+      <a href="#">Produto</a>
+      <a href="#">FAQ</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
+<section class="hero">
   <div class="container hero-grid">
 
-    <div class="hero-text">
-      <h1>
-        Pare de improvisar no WhatsApp.<br>
-        Venda com tudo organizado.
-      </h1>
-
+    <div>
+      <h1>Execução organizada para quem vende todos os dias</h1>
       <p>
-        Scripts prontos, objeções, follow-ups, clientes e estatísticas
-        para responder em segundos — <strong>sem bloco de notas.</strong>
+        DeskTon é um sistema offline-first que centraliza scripts, clientes,
+        objeções e funil de vendas — sem improviso e sem depender de planilhas
+        ou bloco de notas.
       </p>
 
-      <a href="https://pay.hotmart.com/E103811259V?checkoutMode=10&bid=1768236334711" class="btn-primary">
-        Quero organizar minhas vendas
+      <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn-primary">
+        Acessar DeskTon Pro
       </a>
 
-      <div style="margin-top:18px; font-size:14px; color:#555;">
-        📱 Android • 🍎 iOS • 🖥️ Windows<br>
-        <span style="font-size:13px; color:#777;">Funciona offline • Pagamento único</span>
+      <div class="platforms">
+        Android • iOS • Windows • Funciona offline • Pagamento único
       </div>
     </div>
 
-    <div class="hero-image">
-      <video
-        src="img/metads.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-        style="width:100%; border-radius:18px; box-shadow:0 30px 60px rgba(0,0,0,0.18);"
-      ></video>
-      <p style="font-size:13px; color:#666; margin-top:10px; text-align:center;">
-        Demonstração real do DeskTon
-      </p>
+    <div>
+      <video src="img/metads.mp4" autoplay muted loop playsinline></video>
     </div>
 
   </div>
 </section>
 
-<!-- DOR -->
-<section class="features">
+<section>
   <div class="container">
-    <h3>Se você vende pelo WhatsApp, isso já aconteceu:</h3>
+    <h2>Por que o DeskTon existe</h2>
 
-    <div class="cards">
-      <div class="card">Mensagens espalhadas em bloco de notas</div>
-      <div class="card">Clientes esquecidos no meio do caminho</div>
-      <div class="card">Falta de clareza sobre quem responder</div>
-      <div class="card">Vendas perdidas por desorganização</div>
+    <div class="grid-4">
+      <div class="card"><h3>Centralização</h3><p>Tudo em um único painel, sem depender de apps paralelos.</p></div>
+      <div class="card"><h3>Velocidade</h3><p>Respostas prontas com 1 clique durante a conversa.</p></div>
+      <div class="card"><h3>Clareza</h3><p>Visualize exatamente quem está em cada etapa do funil.</p></div>
+      <div class="card"><h3>Controle</h3><p>Menos esquecimento, menos improviso, mais consistência.</p></div>
     </div>
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section class="features" id="como-funciona">
+<section>
   <div class="container">
-    <h3>Como o DeskTon resolve isso</h3>
+    <h2>Como funciona</h2>
 
-    <div class="cards">
-      <div class="card">
-        <span>1</span>
-        <h4>Scripts organizados</h4>
-        <p>Crie cada etapa da conversa em blocos claros.</p>
-      </div>
-
-      <div class="card">
-        <span>2</span>
-        <h4>Copiar com um clique</h4>
-        <p>Responda rápido sem procurar mensagens.</p>
-      </div>
-
-      <div class="card">
-        <span>3</span>
-        <h4>Controle total</h4>
-        <p>Veja quem está em andamento, parado ou perdido.</p>
-      </div>
+    <div class="steps">
+      <div class="card step"><span>1</span><h3>Organize</h3><p>Crie scripts e objeções por etapas da venda.</p></div>
+      <div class="card step"><span>2</span><h3>Execute</h3><p>Copie e responda sem perder tempo.</p></div>
+      <div class="card step"><span>3</span><h3>Acompanhe</h3><p>Visualize funil, status e conversão.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="hero">
-  <div class="container" style="text-align:center;">
-    <h2>
-      Menos improviso.<br>
-      Mais controle.<br>
-      Mais vendas.
-    </h2>
-
-    <a href="https://pay.hotmart.com/E103811259V?checkoutMode=10&bid=1768236334711" class="btn-primary">
-      Comprar DeskTon agora
+<section class="cta">
+  <div class="container">
+    <h2>Menos improviso. Mais controle.</h2>
+    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn-primary">
+      Desbloquear DeskTon Pro
     </a>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container footer-content">
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;">
     <div>
       <strong>DeskTon</strong><br>
       © 2026 — Todos os direitos reservados
     </div>
-
-    <div class="footer-links">
-      <a href="politica-de-privacidade.html">Política de Privacidade</a>
-      <a href="https://wa.me/5511959760647">Contato</a>
+    <div>
+      <a href="politica-de-privacidade.html">Política de Privacidade</a><br>
+      <a href="mailto:deskton.suporte@gmail.com">Suporte</a>
     </div>
   </div>
 </footer>

@@ -35,7 +35,7 @@ body{
 
 /* CONTAINER */
 .container{
-  max-width:1120px;
+  max-width:1180px;
   margin:0 auto;
   padding:0 24px;
 }
@@ -75,13 +75,13 @@ header{
 
 /* HERO */
 .hero{
-  background:linear-gradient(180deg,#eaf6f0 0%,#fff 100%);
-  padding:110px 0;
+  background:linear-gradient(180deg,#eaf6f0 0%,#ffffff 100%);
+  padding:120px 0 140px;
 }
 .hero-grid{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:64px;
+  grid-template-columns:1fr 1.15fr;
+  gap:72px;
   align-items:center;
 }
 .hero h1{
@@ -94,7 +94,21 @@ header{
   color:var(--muted);
   margin-bottom:28px;
 }
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-actions{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+/* MOCKUP */
+.mockup{
+  width:100%;
+  border-radius:22px;
+  border:1px solid var(--border);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,.18),
+    0 10px 30px rgba(0,0,0,.08);
+}
 
 /* SECTIONS */
 .section{padding:96px 0}
@@ -124,15 +138,15 @@ header{
 /* FREE vs PRO */
 .split{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:48px;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:56px;
 }
 .box{
   background:#fff;
-  border-radius:22px;
-  padding:48px;
+  border-radius:24px;
+  padding:52px;
   border:1px solid var(--border);
-  box-shadow:0 30px 60px rgba(0,0,0,.06);
+  box-shadow:0 35px 70px rgba(0,0,0,.06);
 }
 .box h3{margin-top:0}
 .box ul{
@@ -153,8 +167,8 @@ header{
 }
 .faq-item{
   background:#fff;
-  border-radius:16px;
-  padding:26px 30px;
+  border-radius:18px;
+  padding:28px 32px;
   border:1px solid var(--border);
   margin-bottom:18px;
 }
@@ -165,7 +179,7 @@ header{
   background:linear-gradient(180deg,#198754,#0f5132);
   color:#fff;
   text-align:center;
-  padding:110px 0;
+  padding:120px 0;
 }
 .cta h2{margin-bottom:28px}
 
@@ -184,7 +198,7 @@ footer a{
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
+@media(max-width:960px){
   .hero-grid{grid-template-columns:1fr}
   .hero h1{font-size:36px}
 }
@@ -199,30 +213,33 @@ footer a{
   </div>
 </header>
 
+<!-- HERO COM MOCKUP -->
 <section class="hero">
   <div class="container hero-grid">
+
     <div>
       <h1>O painel que organiza suas vendas no WhatsApp</h1>
-      <p>Scripts, objeções, follow-ups, clientes e funil em um só lugar. Simples, direto e offline.</p>
+      <p>
+        Scripts, objeções, follow-ups, clientes e funil em um só lugar.
+        Simples, direto e offline.
+      </p>
+
       <div class="hero-actions">
-        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">Acessar DeskTon Free</a>
-        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">Desbloquear DeskTon Pro</a>
+        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+          Acessar DeskTon Free
+        </a>
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+          Desbloquear DeskTon Pro
+        </a>
       </div>
     </div>
 
-    <div class="card">
-      <h3>O que você organiza no DeskTon</h3>
-      <ul>
-        <li>📁 Scripts por etapas</li>
-        <li>💬 Respostas para objeções</li>
-        <li>🔁 Follow-ups prontos</li>
-        <li>👥 Clientes e status</li>
-        <li>📊 Funil e estatísticas</li>
-      </ul>
-    </div>
+    <img src="img/mockup.PNG" alt="Interface do DeskTon" class="mockup">
+
   </div>
 </section>
 
+<!-- POR QUE USAR -->
 <section class="section light">
   <div class="container">
     <h2>Por que usar o DeskTon</h2>
@@ -237,6 +254,7 @@ footer a{
   </div>
 </section>
 
+<!-- PRA QUEM É -->
 <section class="section white">
   <div class="container">
     <h2>Pra quem é o DeskTon</h2>
@@ -269,7 +287,9 @@ footer a{
           <li>✔️ Uso offline</li>
         </ul>
         <p>Limitações claras, sem pegadinhas.</p>
-        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">Acessar DeskTon Free</a>
+        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+          Acessar DeskTon Free
+        </a>
       </div>
 
       <div class="box">
@@ -284,7 +304,9 @@ footer a{
           <li>📊 Estatísticas e funil liberados</li>
           <li>📥 Importação de pastas e backups</li>
         </ul>
-        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">Adquirir DeskTon Pro</a>
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+          Adquirir DeskTon Pro
+        </a>
         <p class="note">
           Após a compra, você recebe por e-mail um <strong>link de ativação</strong>.<br>
           Basta abrir o link uma vez para liberar todos os recursos.
@@ -294,6 +316,7 @@ footer a{
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="section white">
   <div class="container">
     <h2>Dúvidas frequentes</h2>
@@ -306,11 +329,16 @@ footer a{
   </div>
 </section>
 
+<!-- CTA FINAL -->
 <section class="cta">
   <div class="container">
     <h2>Escolha como quer usar o DeskTon</h2>
-    <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">Começar pelo Free</a>
-    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">Desbloquear o Pro</a>
+    <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+      Começar pelo Free
+    </a>
+    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+      Desbloquear o Pro
+    </a>
   </div>
 </section>
 

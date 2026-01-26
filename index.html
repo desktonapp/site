@@ -14,45 +14,62 @@
 :root {
   --green: #198754;
   --green-dark: #0f5132;
-  --bg-light: #f8f9fa;
+  --bg-light: #f6f8f7;
   --bg-white: #ffffff;
   --text-dark: #1f2933;
   --text-muted: #6b7280;
   --border-light: #e5e7eb;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-dark);
   background: var(--bg-light);
-  scroll-behavior: smooth;
 }
 
+/* ===== CONTAINER REAL ===== */
 .container {
-  max-width: 1140px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* HEADER */
+/* ===== HEADER (AJUSTADO) ===== */
 header {
   background: var(--bg-white);
   border-bottom: 1px solid var(--border-light);
-  padding: 18px 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
-header .logo {
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-area img {
+  width: 36px;
+  height: 36px;
+}
+
+.logo-area span {
+  font-size: 18px;
   font-weight: 700;
-  font-size: 20px;
   color: var(--green-dark);
 }
 
-/* BUTTONS */
+/* ===== BOTÕES ===== */
 .btn {
   padding: 14px 28px;
   border-radius: 8px;
@@ -65,262 +82,286 @@ header .logo {
 .btn.primary {
   background: var(--green);
   color: #fff;
-  box-shadow: 0px 10px 24px rgba(25,135,84,0.35);
+  box-shadow: 0 10px 24px rgba(25,135,84,0.35);
 }
+
 .btn.secondary {
-  background: var(--bg-white);
+  background: #fff;
   border: 1px solid var(--green);
   color: var(--green-dark);
 }
+
 .btn:hover {
   transform: translateY(-2px);
 }
 
-/* SECTION HERO */
+/* ===== HERO ===== */
 .hero {
+  background: #fff;
   padding: 80px 0;
-  background: var(--bg-white);
 }
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;
   align-items: center;
 }
+
 .hero h1 {
   font-size: 44px;
   line-height: 1.2;
   margin-bottom: 16px;
 }
+
 .hero p {
   font-size: 17px;
-  margin-bottom: 20px;
   color: var(--text-muted);
+  margin-bottom: 24px;
 }
 
-/* ICON + TEXT BLOCKS */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  margin-top: 32px;
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
-.feature-card {
-  background: var(--bg-white);
-  border-radius: 14px;
-  padding: 28px;
+
+/* ===== BLOCOS VISUAIS ===== */
+.section {
+  padding: 80px 0;
+}
+
+.section.white {
+  background: #fff;
+}
+
+.section.light {
+  background: var(--bg-light);
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* ===== CARDS ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
   border: 1px solid var(--border-light);
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.feature-card:hover {
+
+.card:hover {
   transform: translateY(-4px);
-  box-shadow: 0px 18px 42px rgba(0,0,0,0.08);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.08);
 }
-.feature-card h3 {
+
+.card h3 {
+  margin-top: 0;
   margin-bottom: 10px;
 }
 
-/* COMPARISON FREE/PRO */
-.compare-section {
-  background: var(--bg-light);
-  padding: 80px 0;
-}
-.compare-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-}
+/* ===== FREE vs PRO ===== */
 .plan-card {
-  background: var(--bg-white);
-  border-radius: 16px;
   padding: 40px;
-  border: 1px solid var(--border-light);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.plan-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 14px 36px rgba(0,0,0,0.06);
-}
-.plan-card h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
 }
 
-/* FAQ */
-.faq-section {
-  background: var(--bg-white);
-  padding: 80px 0;
-}
-.faq-question {
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.faq-answer {
-  margin-bottom: 18px;
-  color: var(--text-muted);
+.plan-card ul {
+  padding-left: 18px;
+  margin: 20px 0;
 }
 
-/* CTA FINAL */
-.cta-section {
+.plan-card li {
+  margin-bottom: 10px;
+}
+
+/* ===== CTA FINAL ===== */
+.cta {
   background: var(--green);
   color: #fff;
   text-align: center;
   padding: 80px 0;
 }
-.cta-section h2 {
-  margin-bottom: 20px;
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
   background: var(--green-dark);
   color: #d1fae5;
+  text-align: center;
   padding: 36px 0;
   font-size: 14px;
-  text-align: center;
 }
+
 footer a {
   color: #a7f3d0;
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 10px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="container">
-  <div class="logo">DeskTon</div>
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo-area">
+      <img src="img/logo.png" alt="DeskTon">
+      <span>DeskTon</span>
+    </div>
+  </div>
 </header>
 
 <!-- HERO -->
-<section class="hero container">
-  <div class="hero-grid">
+<section class="hero">
+  <div class="container hero-grid">
     <div>
-      <h1>Organize suas vendas no WhatsApp de forma prática</h1>
-      <p>Scripts, objeções, follow-ups e clientes em um só painel — offline, rápido e direto.</p>
+      <h1>O painel que organiza suas vendas no WhatsApp</h1>
+      <p>
+        Scripts, objeções, follow-ups, clientes e funil em um só lugar.
+        Simples, direto e offline.
+      </p>
 
-      <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
-        Acessar DeskTon Free
-      </a>
-
-      <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
-        Desbloquear DeskTon Pro
-      </a>
+      <div class="hero-actions">
+        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+          Acessar DeskTon Free
+        </a>
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+          Desbloquear DeskTon Pro
+        </a>
+      </div>
     </div>
 
-    <div class="feature-card">
-      <h3>O que você alcança com o DeskTon</h3>
-      <div class="features-grid">
-        <div>📁 Organização de Scripts</div>
-        <div>💬 Gestão de Objeções</div>
-        <div>🔁 Follow-ups Prontos</div>
-        <div>👥 Controle de Clientes</div>
-        <div>📊 Funil & Estatísticas</div>
-      </div>
+    <div class="card">
+      <h3>O que você organiza no DeskTon</h3>
+      <ul>
+        <li>📁 Scripts por etapas</li>
+        <li>💬 Respostas para objeções</li>
+        <li>🔁 Follow-ups prontos</li>
+        <li>👥 Clientes e status</li>
+        <li>📊 Funil e estatísticas</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- BENEFÍCIOS -->
-<section class="container">
-  <h2>Veja os principais benefícios</h2>
+<section class="section light">
+  <div class="container">
+    <h2>Por que usar o DeskTon</h2>
 
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Respostas em 1 clique</h3>
-      <p>Economize tempo com respostas prontas para cada situação.</p>
-    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Velocidade</h3>
+        <p>Copie respostas prontas e responda em segundos.</p>
+      </div>
 
-    <div class="feature-card">
-      <h3>Visualização clara do funil</h3>
-      <p>Saiba exatamente em que etapa cada cliente está.</p>
-    </div>
+      <div class="card">
+        <h3>Organização</h3>
+        <p>Saiba exatamente em que etapa cada cliente está.</p>
+      </div>
 
-    <div class="feature-card">
-      <h3>Gerenciamento simples</h3>
-      <p>Tenha tudo organizado em uma interface limpa.</p>
-    </div>
+      <div class="card">
+        <h3>Clareza</h3>
+        <p>Interface limpa, sem excesso de informação.</p>
+      </div>
 
-    <div class="feature-card">
-      <h3>Uso offline</h3>
-      <p>Funciona no celular ou computador sem depender da internet.</p>
+      <div class="card">
+        <h3>Offline</h3>
+        <p>Funciona no celular ou computador, mesmo sem internet.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FREE vs PRO -->
-<section class="compare-section container">
-  <h2>Free vs Pro — compare e decida</h2>
+<section class="section white">
+  <div class="container">
+    <h2>Free ou Pro — escolha como usar</h2>
 
-  <div class="compare-grid">
-    <div class="plan-card">
-      <h3>🆓 DeskTon Free</h3>
-      <ul>
-        <li>1 pasta de scripts</li>
-        <li>6 blocos por pasta</li>
-        <li>2 objeções</li>
-        <li>2 follow-ups</li>
-        <li>5 clientes</li>
-        <li>Uso offline</li>
-      </ul>
+    <div class="grid">
+      <div class="card plan-card">
+        <h3>🆓 DeskTon Free</h3>
+        <ul>
+          <li>1 pasta de scripts</li>
+          <li>6 blocos por pasta</li>
+          <li>2 objeções</li>
+          <li>2 follow-ups</li>
+          <li>5 clientes</li>
+          <li>Uso offline</li>
+        </ul>
 
-      <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
-        Acessar Free
-      </a>
+        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+          Usar versão Free
+        </a>
+      </div>
+
+      <div class="card plan-card">
+        <h3>⭐ DeskTon Pro</h3>
+        <ul>
+          <li>Pastas ilimitadas</li>
+          <li>Blocos ilimitados</li>
+          <li>Objeções ilimitadas</li>
+          <li>Follow-ups ilimitados</li>
+          <li>Clientes ilimitados</li>
+          <li>Estatísticas liberadas</li>
+          <li>Importação de dados</li>
+        </ul>
+
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+          Adquirir DeskTon Pro
+        </a>
+
+        <p style="font-size:13px; color:#666; margin-top:12px;">
+          Link de ativação enviado por e-mail após a compra.
+        </p>
+      </div>
     </div>
-
-    <div class="plan-card">
-      <h3>⭐ DeskTon Pro</h3>
-      <ul>
-        <li>Pastas ilimitadas</li>
-        <li>Blocos ilimitados</li>
-        <li>Objeções ilimitadas</li>
-        <li>Follow-ups ilimitados</li>
-        <li>Clientes ilimitados</li>
-        <li>Estatísticas completas</li>
-        <li>Importação de dados</li>
-      </ul>
-
-      <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
-        Adquirir Pro
-      </a>
-
-      <p class="note">Link de ativação enviado por e-mail após a compra.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ DINÂMICO -->
-<section class="faq-section container">
-  <h2>Perguntas frequentes</h2>
-
-  <div>
-    <div class="faq-question">Funciona offline?</div>
-    <div class="faq-answer">Sim — tudo fica salvo no seu dispositivo.</div>
-
-    <div class="faq-question">Preciso criar conta?</div>
-    <div class="faq-answer">Não — sem login, sem senha.</div>
-
-    <div class="faq-question">Onde uso?</div>
-    <div class="faq-answer">No celular e no computador via navegador.</div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
-<section class="cta-section">
-  <h2>Pronto para usar o DeskTon?</h2>
+<section class="cta">
+  <div class="container">
+    <h2>Escolha como quer usar o DeskTon</h2>
 
-  <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
-    Começar pelo Free
-  </a>
-  <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
-    Desbloquear o Pro
-  </a>
+    <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+      Começar pelo Free
+    </a>
+    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+      Desbloquear o Pro
+    </a>
+  </div>
 </section>
 
 <footer>
-  DeskTon © 2026 • <a href="#">Política de Privacidade</a> • <a href="#">Suporte</a>
+  DeskTon © 2026 •
+  <a href="#">Política de Privacidade</a> •
+  <a href="#">Suporte</a>
 </footer>
 
 </body>

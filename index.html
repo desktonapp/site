@@ -46,15 +46,6 @@ body{
   line-height:1.55;
 }
 
-/* ===== DESTAQUE PREMIUM DO TÍTULO ===== */
-.hero-title-gradient{
-  background:linear-gradient(180deg,#22c55e,#16a34a);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  color:transparent;
-}
-
 /* CONTAINER */
 .container{
   max-width:1200px;
@@ -308,6 +299,14 @@ footer a{
   .hero h1{font-size:40px}
   .section{padding:110px 0}
 }
+
+.hero h1{
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 </style>
 </head>
 
@@ -322,9 +321,9 @@ footer a{
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <h1 class="hero-title-gradient">
-        Organize suas vendas. Elimine o improviso. Ganhe controle.
-      </h1>
+      <h1 style="color: var(--green);">
+  Organize suas vendas. Elimine o improviso. Ganhe controle.
+</h1>
       <p>
         O DeskTon é um painel simples e offline para organizar conversas,
         scripts, clientes e etapas de venda — sem planilhas, sem confusão
@@ -340,6 +339,98 @@ footer a{
       </div>
     </div>
     <img src="img/mockup.PNG" alt="Interface do DeskTon" class="mockup">
+  </div>
+</section>
+
+<section class="section light">
+  <div class="container">
+    <h2>Por que o DeskTon muda a forma como você vende</h2>
+    <div class="grid">
+      <div class="card"><h3>Velocidade com consistência</h3><p>Responda rápido sem improvisar. Seus textos já estão prontos e organizados.</p></div>
+      <div class="card"><h3>Organização real</h3><p>Scripts, objeções, follow-ups e clientes em um único painel.</p></div>
+      <div class="card"><h3>Controle do processo</h3><p>Saiba exatamente em que etapa cada conversa está.</p></div>
+      <div class="card"><h3>Copiar com um clique</h3><p>Copie scripts, objeções e follow-ups instantaneamente.</p></div>
+      <div class="card"><h3>Funciona no seu ritmo</h3><p>Offline, leve e direto ao ponto. Sem login.</p></div>
+      <div class="card"><h3>Clareza mental</h3><p>Menos bagunça, mais foco no que gera venda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="container">
+    <h2>O DeskTon é para quem vende na prática</h2>
+    <div class="grid">
+      <div class="card">Quem responde muitos leads manualmente e perde vendas por falta de organização.</div>
+      <div class="card">Quem improvisa mensagens todos os dias e quer manter padrão.</div>
+      <div class="card">Quem vende por conversa e acompanha cada cliente.</div>
+      <div class="card">Quem já tentou planilhas e apps genéricos.</div>
+      <div class="card">Quem quer vender com controle e menos estresse.</div>
+      <div class="card">Quem vive vendas no dia a dia.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section light">
+  <div class="container">
+    <h2>DeskTon Free vs DeskTon Pro</h2>
+
+    <div class="split">
+      <div class="box">
+        <h3>🆓 DeskTon Free</h3>
+        <p>Para conhecer o fluxo e testar a organização.</p>
+        <ul>
+          <li>✔️ 1 pasta de scripts</li>
+          <li>✔️ Até 6 blocos por pasta</li>
+          <li>✔️ Até 2 objeções</li>
+          <li>✔️ Até 2 follow-ups</li>
+          <li>✔️ Até 5 clientes</li>
+          <li>✔️ Uso offline</li>
+        </ul>
+        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
+          Acessar DeskTon Free
+        </a>
+      </div>
+
+      <div class="box">
+        <h3>⭐ DeskTon Pro (Pagamento Único)</h3>
+        <p>Para quem quer usar o DeskTon sem limitações.</p>
+        <ul>
+          <li>🚀 Pastas ilimitadas</li>
+          <li>🚀 Blocos ilimitados</li>
+          <li>🚀 Objeções ilimitadas</li>
+          <li>🚀 Follow-ups ilimitados</li>
+          <li>🚀 Clientes ilimitados</li>
+          <li>📊 Estatísticas e funil liberados</li>
+          <li>📥 Importação de pastas e backups</li>
+        </ul>
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
+          Adquirir DeskTon Pro
+        </a>
+        <p class="note">
+          Após a compra, você recebe por e-mail um <strong>link de ativação</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="container">
+    <h2>Dúvidas frequentes</h2>
+    <div class="faq">
+      <div class="faq-item"><h4>O DeskTon funciona sem internet?</h4><p>Sim. Após abrir uma vez, você pode usar normalmente offline.</p></div>
+      <div class="faq-item"><h4>Preciso criar conta?</h4><p>Não. Sem cadastro, login ou senha.</p></div>
+      <div class="faq-item"><h4>Meus dados ficam seguros?</h4><p>Ficam armazenados localmente no seu dispositivo.</p></div>
+      <div class="faq-item"><h4>É mensalidade?</h4><p>Não. Pagamento único.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Escolha como quer usar o DeskTon</h2>
+    <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">Começar pelo Free</a>
+    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">Desbloquear o Pro</a>
   </div>
 </section>
 

@@ -2,282 +2,297 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
-<title>DeskTon — Organize suas vendas com controle</title>
-
-<link rel="icon" href="img/escudo.png">
+<title>DeskTon — Painel de execução para vendas</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="DeskTon é um painel offline-first para organizar scripts, clientes, objeções, follow-ups e etapas de venda com controle e padrão." />
 
-<!-- SEO / Open Graph -->
-<meta property="og:title" content="DeskTon — Organize suas vendas com controle">
-<meta property="og:description" content="Organize scripts, clientes e etapas de venda em um único painel. Offline, sem login e sem mensalidade.">
-<meta property="og:image" content="https://desktonapp.github.io/site/img/mockup.PNG">
-<meta property="og:url" content="https://desktonapp.github.io/site/index.html">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/escudo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --green:#198754;
-  --green-dark:#0f5132;
-  --green-soft:#e9f7ef;
-  --bg:#f3f6f5;
-  --white:#ffffff;
-  --text:#1f2933;
-  --muted:#6b7280;
-  --border:#e5e7eb;
+
+/* ======================================================
+   DESIGN TOKENS — DeskTon System
+====================================================== */
+
+:root {
+  /* cores */
+  --color-bg: #f4f6f5;
+  --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+  --color-text-primary: #1f2933;
+  --color-text-secondary: #6b7280;
+  --color-accent: #198754;
+  --color-accent-dark: #0f5132;
+
+  /* tipografia */
+  --font-base: 'Inter', system-ui, sans-serif;
+
+  /* espaçamentos */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* sombra */
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.04);
+  --shadow-md: 0 12px 28px rgba(0,0,0,.06);
 }
 
-*{box-sizing:border-box}
+/* ======================================================
+   RESET
+====================================================== */
 
-body{
-  margin:0;
-  font-family:Inter,system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.55;
+* {
+  box-sizing: border-box;
 }
 
-/* CONTAINER */
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 24px;
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
 }
 
-/* HEADER */
-header{
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-.header-inner{
-  height:72px;
-  display:flex;
-  align-items:center;
-}
-.header-inner img{
-  height:36px;
+/* ======================================================
+   LAYOUT BASE
+====================================================== */
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
-/* BUTTONS */
-.btn{
-  padding:15px 34px;
-  border-radius:14px;
-  font-weight:700;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  transition:all .25s ease;
-  cursor:pointer;
+section {
+  padding: var(--space-xl) 0;
 }
 
-.btn.primary{
-  background:linear-gradient(180deg,#1fb86b,#198754);
-  color:#fff;
-  box-shadow:0 14px 34px rgba(25,135,84,.35);
-}
-.btn.primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(25,135,84,.45);
+/* ======================================================
+   HEADER
+====================================================== */
+
+header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.btn.secondary{
-  background:#fff;
-  border:2px solid var(--green);
-  color:var(--green-dark);
-}
-.btn.secondary:hover{
-  background:var(--green-soft);
-  transform:translateY(-2px);
+.header-inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
 }
 
-/* HERO */
-.hero{
-  background:
-    radial-gradient(1200px 600px at 80% -20%, #dff3ea 0%, transparent 60%),
-    linear-gradient(180deg,#eef9f3 0%,#ffffff 100%);
-  padding:140px 0 160px;
-  position:relative;
-  overflow:hidden;
+.header-inner img {
+  height: 34px;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1.15fr;
-  gap:80px;
-  align-items:center;
+/* ======================================================
+   TYPOGRAPHY SYSTEM
+====================================================== */
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-sm);
 }
 
-.hero h1{
-  font-size:52px;
-  font-weight:800;
-  line-height:1.1;
-  margin-bottom:22px;
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
 }
 
-.hero p{
-  font-size:19px;
-  color:var(--muted);
-  max-width:560px;
-  margin-bottom:36px;
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
 }
 
-.hero-actions{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
+p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin: 0;
 }
 
-/* MOCKUP */
-.mockup{
-  width:100%;
-  border-radius:26px;
-  border:1px solid var(--border);
-  box-shadow:
-    0 60px 120px rgba(0,0,0,.25),
-    0 20px 50px rgba(0,0,0,.12);
-  transition:transform .4s ease;
-}
-.mockup:hover{
-  transform:translateY(-6px);
+/* ======================================================
+   BUTTONS (SYSTEM COMPONENT)
+====================================================== */
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
 }
 
-/* SECTIONS */
-.section{
-  padding:130px 0;
+.button {
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
 }
 
-.section.white{background:#fff}
-.section.light{background:var(--bg)}
-
-.section h2{
-  font-size:38px;
-  font-weight:800;
-  text-align:center;
-  margin-bottom:70px;
+.button.primary {
+  background: var(--color-accent);
+  color: #fff;
 }
 
-/* GRID / CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:40px;
+.button.primary:hover {
+  background: var(--color-accent-dark);
 }
 
-.card{
-  background:#fff;
-  border-radius:24px;
-  padding:44px 38px;
-  border:1px solid var(--border);
-  box-shadow:0 25px 60px rgba(0,0,0,.06);
-  transition:all .3s ease;
+.button.secondary {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-dark);
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 40px 80px rgba(0,0,0,.12);
+/* ======================================================
+   HERO
+====================================================== */
+
+.hero {
+  background: linear-gradient(180deg, #eaf6f0 0%, #ffffff 100%);
 }
 
-.card h3{
-  margin-top:0;
-  margin-bottom:12px;
-  font-size:20px;
-  font-weight:700;
-  color:var(--green-dark);
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-lg);
+  align-items: center;
 }
 
-/* FREE vs PRO */
-.split{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:70px;
+.hero img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
 }
 
-.box{
-  background:#fff;
-  border-radius:28px;
-  padding:60px 56px;
-  border:1px solid var(--border);
-  box-shadow:0 40px 90px rgba(0,0,0,.08);
+/* ======================================================
+   FEATURE GRID
+====================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
 }
 
-.box ul{
-  padding-left:18px;
-  margin:26px 0;
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
 }
 
-.box li{
-  margin-bottom:14px;
+/* ======================================================
+   SPLIT (FREE vs PRO)
+====================================================== */
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
 }
 
-.note{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:18px;
+.plan {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
 }
 
-/* FAQ */
-.faq{
-  max-width:920px;
-  margin:0 auto;
+.plan ul {
+  padding-left: 18px;
+  margin: var(--space-md) 0;
 }
 
-.faq-item{
-  background:#fff;
-  border-radius:22px;
-  padding:34px 36px;
-  border:1px solid var(--border);
-  margin-bottom:22px;
-  box-shadow:0 18px 40px rgba(0,0,0,.05);
+.plan li {
+  margin-bottom: var(--space-xs);
+  font-size: 14px;
 }
 
-/* CTA */
-.cta{
-  background:
-    radial-gradient(900px 400px at 50% -20%, #2ecc71 0%, transparent 60%),
-    linear-gradient(180deg,#198754,#0f5132);
-  color:#fff;
-  text-align:center;
-  padding:140px 0;
+/* ======================================================
+   FAQ
+====================================================== */
+
+.faq {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.cta h2{
-  font-size:42px;
-  font-weight:800;
-  margin-bottom:34px;
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
-/* FOOTER */
-footer{
-  background:#0f5132;
-  color:#c7f5dc;
-  text-align:center;
-  padding:44px 0;
-  font-size:14px;
+/* ======================================================
+   CTA
+====================================================== */
+
+.cta {
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff;
+  text-align: center;
 }
 
-footer a{
-  color:#a7f3d0;
-  text-decoration:none;
-  margin:0 10px;
+.cta h2 {
+  color: #fff;
 }
 
-/* RESPONSIVE */
-@media(max-width:960px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero h1{font-size:40px}
-  .section{padding:110px 0}
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer {
+  background: var(--color-accent-dark);
+  color: #c7f5dc;
+  text-align: center;
+  padding: var(--space-md);
+  font-size: 14px;
 }
+
+footer a {
+  color: #a7f3d0;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+
 </style>
 </head>
 
@@ -292,114 +307,103 @@ footer a{
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <h1>Organize suas vendas. Elimine o improviso. Ganhe controle.</h1>
+      <h1>Organize suas vendas.<br>Elimine o improviso.</h1>
       <p>
-        O DeskTon é um painel simples e offline para organizar conversas,
-        scripts, clientes e etapas de venda — sem planilhas, sem confusão
-        e sem depender de ferramentas complexas.
+        DeskTon é um painel de execução para quem vende por conversa
+        e precisa manter padrão, velocidade e controle sem depender
+        de ferramentas complexas.
       </p>
-      <div class="hero-actions">
-        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
-          Acessar DeskTon Free
+
+      <div class="actions">
+        <a href="https://desktonapp.github.io/deskton/" class="button secondary" target="_blank">
+          Usar versão Free
         </a>
-        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
-          Desbloquear DeskTon Pro
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="button primary" target="_blank">
+          Desbloquear versão Pro
         </a>
       </div>
     </div>
-    <img src="img/mockup.PNG" alt="Interface do DeskTon" class="mockup">
+
+    <img src="img/mockup.PNG" alt="Interface do DeskTon">
   </div>
 </section>
 
-<section class="section light">
+<section>
   <div class="container">
-    <h2>Por que o DeskTon muda a forma como você vende</h2>
+    <h2>Por que o DeskTon existe</h2>
     <div class="grid">
-      <div class="card"><h3>Velocidade com consistência</h3><p>Responda rápido sem improvisar. Seus textos já estão prontos e organizados.</p></div>
-      <div class="card"><h3>Organização real</h3><p>Scripts, objeções, follow-ups e clientes em um único painel.</p></div>
-      <div class="card"><h3>Controle do processo</h3><p>Saiba exatamente em que etapa cada conversa está.</p></div>
-      <div class="card"><h3>Copiar com um clique</h3><p>Copie scripts, objeções e follow-ups instantaneamente. Um clique, resposta enviada.</p></div>
-      <div class="card"><h3>Funciona no seu ritmo</h3><p>Offline, leve e direto ao ponto. Sem login e sem distrações.</p></div>
-      <div class="card"><h3>Clareza mental</h3><p>Menos bagunça, mais foco no que realmente gera venda.</p></div>
+      <div class="card"><h3>Execução rápida</h3><p>Responda em segundos com textos prontos.</p></div>
+      <div class="card"><h3>Organização real</h3><p>Scripts, objeções e clientes no mesmo lugar.</p></div>
+      <div class="card"><h3>Controle do processo</h3><p>Visualize cada etapa da venda.</p></div>
+      <div class="card"><h3>Copiar com um clique</h3><p>Sem selecionar texto. Sem perda de tempo.</p></div>
+      <div class="card"><h3>Offline-first</h3><p>Funciona mesmo sem internet.</p></div>
+      <div class="card"><h3>Menos carga mental</h3><p>Mais foco no que gera resultado.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section white">
-  <div class="container">
-    <h2>O DeskTon é para quem vende na prática</h2>
-    <div class="grid">
-      <div class="card">Quem responde muitos leads manualmente e perde vendas por falta de organização.</div>
-      <div class="card">Quem improvisa mensagens todos os dias e quer manter padrão sem soar robótico.</div>
-      <div class="card">Quem vende por conversa e precisa acompanhar cada cliente de perto.</div>
-      <div class="card">Quem já tentou planilhas, notas ou apps genéricos e não conseguiu manter constância.</div>
-      <div class="card">Quem quer vender com mais controle e menos estresse.</div>
-      <div class="card">Quem lida com vendas no dia a dia, não com teoria.</div>
-    </div>
-  </div>
-</section>
-
-<section class="section light">
+<section>
   <div class="container">
     <h2>DeskTon Free vs DeskTon Pro</h2>
 
     <div class="split">
-      <div class="box">
-        <h3>🆓 DeskTon Free</h3>
-        <p>Para conhecer o fluxo e testar a organização.</p>
+      <div class="plan">
+        <h3>DeskTon Free</h3>
         <ul>
-          <li>✔️ 1 pasta de scripts</li>
-          <li>✔️ Até 6 blocos por pasta</li>
-          <li>✔️ Até 2 objeções</li>
-          <li>✔️ Até 2 follow-ups</li>
-          <li>✔️ Até 5 clientes</li>
-          <li>✔️ Uso offline</li>
+          <li>1 pasta de scripts</li>
+          <li>6 blocos por pasta</li>
+          <li>2 objeções</li>
+          <li>2 follow-ups</li>
+          <li>5 clientes</li>
+          <li>Uso offline</li>
         </ul>
-        <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
-          Acessar DeskTon Free
+        <a href="https://desktonapp.github.io/deskton/" class="button secondary" target="_blank">
+          Acessar Free
         </a>
       </div>
 
-      <div class="box">
-        <h3>⭐ DeskTon Pro (Pagamento Único)</h3>
-        <p>Para quem quer usar o DeskTon sem limitações.</p>
+      <div class="plan">
+        <h3>DeskTon Pro</h3>
         <ul>
-          <li>🚀 Pastas ilimitadas</li>
-          <li>🚀 Blocos ilimitados</li>
-          <li>🚀 Objeções ilimitadas</li>
-          <li>🚀 Follow-ups ilimitados</li>
-          <li>🚀 Clientes ilimitados</li>
-          <li>📊 Estatísticas e funil liberados</li>
-          <li>📥 Importação de pastas e backups</li>
+          <li>Pastas ilimitadas</li>
+          <li>Blocos ilimitados</li>
+          <li>Objeções ilimitadas</li>
+          <li>Follow-ups ilimitados</li>
+          <li>Clientes ilimitados</li>
+          <li>Estatísticas liberadas</li>
+          <li>Backup e importação</li>
         </ul>
-        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">
-          Adquirir DeskTon Pro
+        <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="button primary" target="_blank">
+          Comprar Pro
         </a>
-        <p class="note">
-          Após a compra, você recebe por e-mail um <strong>link de ativação</strong>.
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section white">
+<section>
   <div class="container">
     <h2>Dúvidas frequentes</h2>
     <div class="faq">
-      <div class="faq-item"><h4>O DeskTon funciona sem internet?</h4><p>Sim. Após abrir uma vez, você pode usar normalmente offline.</p></div>
-      <div class="faq-item"><h4>Preciso criar conta ou login?</h4><p>Não. O DeskTon funciona sem cadastro, senha ou banco de dados externo.</p></div>
-      <div class="faq-item"><h4>Meus dados ficam seguros?</h4><p>Todos os dados ficam armazenados localmente no seu dispositivo.</p></div>
-      <div class="faq-item"><h4>É mensalidade?</h4><p>Não. O DeskTon Pro é pagamento único, sem cobranças recorrentes.</p></div>
+      <div class="faq-item"><h3>Funciona offline?</h3><p>Sim. Após abrir, funciona sem internet.</p></div>
+      <div class="faq-item"><h3>Preciso criar conta?</h3><p>Não. Sem login ou senha.</p></div>
+      <div class="faq-item"><h3>Meus dados ficam onde?</h3><p>Salvos localmente no seu dispositivo.</p></div>
+      <div class="faq-item"><h3>É mensalidade?</h3><p>Não. Pagamento único.</p></div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="container">
-    <h2>Escolha como quer usar o DeskTon</h2>
-    <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">Começar pelo Free</a>
-    <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="btn primary" target="_blank">Desbloquear o Pro</a>
+    <h2>Escolha como usar o DeskTon</h2>
+    <div class="actions" style="justify-content:center">
+      <a href="https://desktonapp.github.io/deskton/" class="button secondary" target="_blank">
+        Começar pelo Free
+      </a>
+      <a href="https://chk.eduzz.com/E0D68VBD91?country=BRA" class="button primary" target="_blank">
+        Desbloquear Pro
+      </a>
+    </div>
   </div>
 </section>
 

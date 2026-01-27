@@ -9,13 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="DeskTon é um painel offline-first para organizar scripts, clientes, objeções, follow-ups e etapas de venda com controle e padrão." />
 
-<!-- SEO / Open Graph -->
 <meta property="og:title" content="DeskTon — Organize suas vendas com controle">
 <meta property="og:description" content="Organize scripts, clientes e etapas de venda em um único painel. Offline, sem login e sem mensalidade.">
 <meta property="og:image" content="https://desktonapp.github.io/site/img/mockup.PNG">
 <meta property="og:url" content="https://desktonapp.github.io/site/index.html">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,14 +23,11 @@
 :root{
   --green:#22c55e;
   --green-dark:#16a34a;
-
   --bg:#0f1412;
   --bg-soft:#151b18;
   --surface:#1b2220;
-
   --text:#e5e7eb;
   --muted:#9ca3af;
-
   --border:#26302c;
 }
 
@@ -46,14 +41,12 @@ body{
   line-height:1.55;
 }
 
-/* CONTAINER */
 .container{
   max-width:1200px;
   margin:0 auto;
   padding:0 24px;
 }
 
-/* HEADER */
 header{
   background:rgba(15,20,18,.9);
   border-bottom:1px solid var(--border);
@@ -62,16 +55,15 @@ header{
   z-index:100;
   backdrop-filter: blur(6px);
 }
+
 .header-inner{
   height:72px;
   display:flex;
   align-items:center;
 }
-.header-inner img{
-  height:36px;
-}
 
-/* BUTTONS */
+.header-inner img{height:36px}
+
 .btn{
   padding:15px 34px;
   border-radius:14px;
@@ -81,8 +73,7 @@ header{
   align-items:center;
   justify-content:center;
   gap:8px;
-  transition:all .25s ease;
-  cursor:pointer;
+  transition:.25s;
 }
 
 .btn.primary{
@@ -90,29 +81,17 @@ header{
   color:#052e16;
   box-shadow:0 14px 34px rgba(34,197,94,.35);
 }
-.btn.primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(34,197,94,.45);
-}
 
 .btn.secondary{
-  background:transparent;
   border:2px solid var(--green);
   color:var(--green);
 }
-.btn.secondary:hover{
-  background:rgba(34,197,94,.08);
-  transform:translateY(-2px);
-}
 
-/* HERO */
 .hero{
   background:
-    radial-gradient(1200px 600px at 80% -20%, rgba(34,197,94,.18) 0%, transparent 60%),
-    linear-gradient(180deg,#111815 0%,#0f1412 100%);
+    radial-gradient(1200px 600px at 80% -20%, rgba(34,197,94,.18), transparent),
+    linear-gradient(180deg,#111815,#0f1412);
   padding:140px 0 160px;
-  position:relative;
-  overflow:hidden;
 }
 
 .hero-grid{
@@ -129,12 +108,11 @@ header{
   margin-bottom:22px;
 }
 
-/* 👉 DESTAQUE PREMIUM */
+/* DESTAQUE PREMIUM */
 .highlight{
-  background: linear-gradient(180deg, #22c55e, #16a34a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight:800;
+  background:linear-gradient(180deg,#22c55e,#16a34a);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .hero p{
@@ -147,28 +125,16 @@ header{
 .hero-actions{
   display:flex;
   gap:18px;
-  flex-wrap:wrap;
 }
 
-/* MOCKUP */
 .mockup{
   width:100%;
   border-radius:26px;
   border:1px solid var(--border);
-  box-shadow:
-    0 60px 120px rgba(0,0,0,.55),
-    0 20px 50px rgba(0,0,0,.35);
-  transition:transform .4s ease;
-}
-.mockup:hover{
-  transform:translateY(-6px);
+  box-shadow:0 60px 120px rgba(0,0,0,.55);
 }
 
-/* SECTIONS */
-.section{
-  padding:130px 0;
-}
-
+.section{padding:130px 0}
 .section.light{background:var(--bg-soft)}
 .section.white{background:var(--bg)}
 
@@ -179,7 +145,6 @@ header{
   margin-bottom:70px;
 }
 
-/* GRID / CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -191,28 +156,10 @@ header{
   border-radius:24px;
   padding:44px 38px;
   border:1px solid var(--border);
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
-  transition:all .3s ease;
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 40px 80px rgba(0,0,0,.55);
-}
+.card h3{color:var(--green)}
 
-.card h3{
-  margin-top:0;
-  margin-bottom:12px;
-  font-size:20px;
-  font-weight:700;
-  color:var(--green);
-}
-
-.card p{
-  color:var(--muted);
-}
-
-/* FREE vs PRO */
 .split{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
@@ -224,30 +171,11 @@ header{
   border-radius:28px;
   padding:60px 56px;
   border:1px solid var(--border);
-  box-shadow:0 40px 90px rgba(0,0,0,.45);
 }
 
 .box h3{color:var(--green)}
-.box p{color:var(--muted)}
 
-.box ul{
-  padding-left:18px;
-  margin:26px 0;
-}
-
-.box li{margin-bottom:14px}
-
-.note{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:18px;
-}
-
-/* FAQ */
-.faq{
-  max-width:920px;
-  margin:0 auto;
-}
+.faq{max-width:920px;margin:0 auto}
 
 .faq-item{
   background:var(--surface);
@@ -255,50 +183,25 @@ header{
   padding:34px 36px;
   border:1px solid var(--border);
   margin-bottom:22px;
-  box-shadow:0 18px 40px rgba(0,0,0,.35);
 }
 
-.faq-item h4{
-  margin-top:0;
-  color:var(--green);
-}
-
-/* CTA */
 .cta{
-  background:
-    radial-gradient(900px 400px at 50% -20%, rgba(34,197,94,.35) 0%, transparent 60%),
-    linear-gradient(180deg,#166534,#052e16);
-  color:#dcfce7;
-  text-align:center;
+  background:linear-gradient(180deg,#166534,#052e16);
   padding:140px 0;
+  text-align:center;
 }
 
-.cta h2{
-  font-size:42px;
-  font-weight:800;
-  margin-bottom:34px;
-}
-
-/* FOOTER */
 footer{
   background:#052e16;
   color:#a7f3d0;
   text-align:center;
   padding:44px 0;
-  font-size:14px;
 }
 
 footer a{
   color:#86efac;
   text-decoration:none;
   margin:0 10px;
-}
-
-/* RESPONSIVE */
-@media(max-width:960px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero h1{font-size:40px}
-  .section{padding:110px 0}
 }
 </style>
 </head>
@@ -319,11 +222,13 @@ footer a{
         <span class="highlight">Elimine o improviso.</span>
         Ganhe controle.
       </h1>
+
       <p>
         O DeskTon é um painel simples e offline para organizar conversas,
         scripts, clientes e etapas de venda — sem planilhas, sem confusão
         e sem depender de ferramentas complexas.
       </p>
+
       <div class="hero-actions">
         <a href="https://desktonapp.github.io/deskton/" class="btn secondary" target="_blank">
           Acessar DeskTon Free
@@ -333,7 +238,8 @@ footer a{
         </a>
       </div>
     </div>
-    <img src="img/mockup.PNG" alt="Interface do DeskTon" class="mockup">
+
+    <img src="img/mockup.PNG" class="mockup" alt="Interface do DeskTon">
   </div>
 </section>
 

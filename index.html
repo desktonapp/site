@@ -23,14 +23,17 @@
 
 <style>
 :root{
-  --green:#198754;
-  --green-dark:#0f5132;
-  --green-soft:#e9f7ef;
-  --bg:#f3f6f5;
-  --white:#ffffff;
-  --text:#1f2933;
-  --muted:#6b7280;
-  --border:#e5e7eb;
+  --green:#22c55e;
+  --green-dark:#16a34a;
+
+  --bg:#0f1412;
+  --bg-soft:#151b18;
+  --surface:#1b2220;
+
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+
+  --border:#26302c;
 }
 
 *{box-sizing:border-box}
@@ -52,11 +55,12 @@ body{
 
 /* HEADER */
 header{
-  background:#fff;
+  background:rgba(15,20,18,.9);
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
   z-index:100;
+  backdrop-filter: blur(6px);
 }
 .header-inner{
   height:72px;
@@ -82,30 +86,30 @@ header{
 }
 
 .btn.primary{
-  background:linear-gradient(180deg,#1fb86b,#198754);
-  color:#fff;
-  box-shadow:0 14px 34px rgba(25,135,84,.35);
+  background:linear-gradient(180deg,#22c55e,#16a34a);
+  color:#052e16;
+  box-shadow:0 14px 34px rgba(34,197,94,.35);
 }
 .btn.primary:hover{
   transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(25,135,84,.45);
+  box-shadow:0 22px 50px rgba(34,197,94,.45);
 }
 
 .btn.secondary{
-  background:#fff;
+  background:transparent;
   border:2px solid var(--green);
-  color:var(--green-dark);
+  color:var(--green);
 }
 .btn.secondary:hover{
-  background:var(--green-soft);
+  background:rgba(34,197,94,.08);
   transform:translateY(-2px);
 }
 
 /* HERO */
 .hero{
   background:
-    radial-gradient(1200px 600px at 80% -20%, #dff3ea 0%, transparent 60%),
-    linear-gradient(180deg,#eef9f3 0%,#ffffff 100%);
+    radial-gradient(1200px 600px at 80% -20%, rgba(34,197,94,.18) 0%, transparent 60%),
+    linear-gradient(180deg,#111815 0%,#0f1412 100%);
   padding:140px 0 160px;
   position:relative;
   overflow:hidden;
@@ -144,8 +148,8 @@ header{
   border-radius:26px;
   border:1px solid var(--border);
   box-shadow:
-    0 60px 120px rgba(0,0,0,.25),
-    0 20px 50px rgba(0,0,0,.12);
+    0 60px 120px rgba(0,0,0,.55),
+    0 20px 50px rgba(0,0,0,.35);
   transition:transform .4s ease;
 }
 .mockup:hover{
@@ -157,8 +161,8 @@ header{
   padding:130px 0;
 }
 
-.section.white{background:#fff}
-.section.light{background:var(--bg)}
+.section.light{background:var(--bg-soft)}
+.section.white{background:var(--bg)}
 
 .section h2{
   font-size:38px;
@@ -175,17 +179,17 @@ header{
 }
 
 .card{
-  background:#fff;
+  background:var(--surface);
   border-radius:24px;
   padding:44px 38px;
   border:1px solid var(--border);
-  box-shadow:0 25px 60px rgba(0,0,0,.06);
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
   transition:all .3s ease;
 }
 
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 40px 80px rgba(0,0,0,.12);
+  box-shadow:0 40px 80px rgba(0,0,0,.55);
 }
 
 .card h3{
@@ -193,7 +197,11 @@ header{
   margin-bottom:12px;
   font-size:20px;
   font-weight:700;
-  color:var(--green-dark);
+  color:var(--green);
+}
+
+.card p{
+  color:var(--muted);
 }
 
 /* FREE vs PRO */
@@ -204,11 +212,19 @@ header{
 }
 
 .box{
-  background:#fff;
+  background:var(--surface);
   border-radius:28px;
   padding:60px 56px;
   border:1px solid var(--border);
-  box-shadow:0 40px 90px rgba(0,0,0,.08);
+  box-shadow:0 40px 90px rgba(0,0,0,.45);
+}
+
+.box h3{
+  color:var(--green);
+}
+
+.box p{
+  color:var(--muted);
 }
 
 .box ul{
@@ -233,20 +249,25 @@ header{
 }
 
 .faq-item{
-  background:#fff;
+  background:var(--surface);
   border-radius:22px;
   padding:34px 36px;
   border:1px solid var(--border);
   margin-bottom:22px;
-  box-shadow:0 18px 40px rgba(0,0,0,.05);
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+
+.faq-item h4{
+  margin-top:0;
+  color:var(--green);
 }
 
 /* CTA */
 .cta{
   background:
-    radial-gradient(900px 400px at 50% -20%, #2ecc71 0%, transparent 60%),
-    linear-gradient(180deg,#198754,#0f5132);
-  color:#fff;
+    radial-gradient(900px 400px at 50% -20%, rgba(34,197,94,.35) 0%, transparent 60%),
+    linear-gradient(180deg,#166534,#052e16);
+  color:#dcfce7;
   text-align:center;
   padding:140px 0;
 }
@@ -259,15 +280,15 @@ header{
 
 /* FOOTER */
 footer{
-  background:#0f5132;
-  color:#c7f5dc;
+  background:#052e16;
+  color:#a7f3d0;
   text-align:center;
   padding:44px 0;
   font-size:14px;
 }
 
 footer a{
-  color:#a7f3d0;
+  color:#86efac;
   text-decoration:none;
   margin:0 10px;
 }
@@ -318,9 +339,9 @@ footer a{
       <div class="card"><h3>Velocidade com consistência</h3><p>Responda rápido sem improvisar. Seus textos já estão prontos e organizados.</p></div>
       <div class="card"><h3>Organização real</h3><p>Scripts, objeções, follow-ups e clientes em um único painel.</p></div>
       <div class="card"><h3>Controle do processo</h3><p>Saiba exatamente em que etapa cada conversa está.</p></div>
-      <div class="card"><h3>Copiar com um clique</h3><p>Copie scripts, objeções e follow-ups instantaneamente. Um clique, resposta enviada.</p></div>
-      <div class="card"><h3>Funciona no seu ritmo</h3><p>Offline, leve e direto ao ponto. Sem login e sem distrações.</p></div>
-      <div class="card"><h3>Clareza mental</h3><p>Menos bagunça, mais foco no que realmente gera venda.</p></div>
+      <div class="card"><h3>Copiar com um clique</h3><p>Copie scripts, objeções e follow-ups instantaneamente.</p></div>
+      <div class="card"><h3>Funciona no seu ritmo</h3><p>Offline, leve e direto ao ponto. Sem login.</p></div>
+      <div class="card"><h3>Clareza mental</h3><p>Menos bagunça, mais foco no que gera venda.</p></div>
     </div>
   </div>
 </section>
@@ -330,11 +351,11 @@ footer a{
     <h2>O DeskTon é para quem vende na prática</h2>
     <div class="grid">
       <div class="card">Quem responde muitos leads manualmente e perde vendas por falta de organização.</div>
-      <div class="card">Quem improvisa mensagens todos os dias e quer manter padrão sem soar robótico.</div>
-      <div class="card">Quem vende por conversa e precisa acompanhar cada cliente de perto.</div>
-      <div class="card">Quem já tentou planilhas, notas ou apps genéricos e não conseguiu manter constância.</div>
-      <div class="card">Quem quer vender com mais controle e menos estresse.</div>
-      <div class="card">Quem lida com vendas no dia a dia, não com teoria.</div>
+      <div class="card">Quem improvisa mensagens todos os dias e quer manter padrão.</div>
+      <div class="card">Quem vende por conversa e acompanha cada cliente.</div>
+      <div class="card">Quem já tentou planilhas e apps genéricos.</div>
+      <div class="card">Quem quer vender com controle e menos estresse.</div>
+      <div class="card">Quem vive vendas no dia a dia.</div>
     </div>
   </div>
 </section>
@@ -388,9 +409,9 @@ footer a{
     <h2>Dúvidas frequentes</h2>
     <div class="faq">
       <div class="faq-item"><h4>O DeskTon funciona sem internet?</h4><p>Sim. Após abrir uma vez, você pode usar normalmente offline.</p></div>
-      <div class="faq-item"><h4>Preciso criar conta ou login?</h4><p>Não. O DeskTon funciona sem cadastro, senha ou banco de dados externo.</p></div>
-      <div class="faq-item"><h4>Meus dados ficam seguros?</h4><p>Todos os dados ficam armazenados localmente no seu dispositivo.</p></div>
-      <div class="faq-item"><h4>É mensalidade?</h4><p>Não. O DeskTon Pro é pagamento único, sem cobranças recorrentes.</p></div>
+      <div class="faq-item"><h4>Preciso criar conta?</h4><p>Não. Sem cadastro, login ou senha.</p></div>
+      <div class="faq-item"><h4>Meus dados ficam seguros?</h4><p>Ficam armazenados localmente no seu dispositivo.</p></div>
+      <div class="faq-item"><h4>É mensalidade?</h4><p>Não. Pagamento único.</p></div>
     </div>
   </div>
 </section>

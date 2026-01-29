@@ -342,7 +342,37 @@ footer a{
   color: transparent;
 }
 
+.contact-links{
+  text-align:center;
+  padding-top:40px;
+}
 
+.contact-title{
+  font-size:20px;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:26px;
+}
+
+.contact-icons{
+  display:flex;
+  justify-content:center;
+  gap:28px;
+}
+
+.contact-icons img{
+  width:56px;
+  height:56px;
+  transition:transform .25s ease, opacity .25s ease;
+  opacity:.9;
+}
+
+.contact-icons img:hover{
+  transform:translateY(-4px);
+  opacity:1;
+}
+
+  
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -520,6 +550,29 @@ footer a{
       <div class="faq-item"><h4>É mensalidade?</h4><p>Não. Pagamento único.</p></div>
     </div>
   </div>
+
+<section class="section white">
+  <div class="container contact-links">
+
+    <div class="contact-icons">
+      <a 
+        href="https://wa.me/5511959760647" 
+        target="_blank" 
+        aria-label="Falar com suporte no WhatsApp"
+      >
+        <img src="img/whatsapp.png" alt="WhatsApp DeskTon">
+      </a>
+
+      <a 
+        href="https://www.instagram.com/deskton.app/" 
+        target="_blank" 
+        aria-label="Instagram do DeskTon"
+      >
+        <img src="img/instagram.png" alt="Instagram DeskTon">
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <section class="cta">
@@ -538,6 +591,7 @@ footer a{
 
 </body>
 </html>
+
 
 
 

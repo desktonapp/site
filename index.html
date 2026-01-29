@@ -308,27 +308,27 @@ footer a{
 }
 
 .hero-video{
-  margin-top:40px;
-  max-width:560px;
+  margin-top:80px;
+  display:flex;
+  justify-content:center;
 }
 
-.video-wrapper{
-  position:relative;
-  padding-bottom:56.25%; /* 16:9 */
-  height:0;
+.hero-video .video-wrapper{
+  width:100%;
+  max-width:420px; /* tamanho ideal p/ Shorts */
+  aspect-ratio:9 / 16;
+  border-radius:22px;
   overflow:hidden;
-  border-radius:18px;
   border:1px solid var(--border);
   box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
-.video-wrapper iframe{
-  position:absolute;
-  top:0;
-  left:0;
+.hero-video iframe{
   width:100%;
   height:100%;
+  border:0;
 }
+
 
 
 </style>
@@ -375,19 +375,25 @@ footer a{
     </div>
     <img src="img/mockup.PNG" alt="Interface do DeskTon" class="mockup">
   </div>
-</section>
 
-<div class="hero-video">
-  <div class="video-wrapper">
-    <iframe 
-      src="https://www.youtube.com/embed/0xN-EacwZik"
-      title="Apresentação do DeskTon"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+  <!-- MOCKUP -->
+    <img src="img/mockup.PNG" alt="Interface do DeskTon" class="mockup">
   </div>
-</div>
+
+  <!-- 🔽 VÍDEO FORA DO GRID -->
+  <div class="container hero-video">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/0xN-EacwZik"
+        title="Apresentação do DeskTon"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  
+</section>
 
 
 <section class="section light">
@@ -517,6 +523,7 @@ footer a{
 
 </body>
 </html>
+
 
 
 
